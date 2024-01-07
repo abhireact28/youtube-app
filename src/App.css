@@ -1,0 +1,92 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+} */
+/* html{
+  font-size: 62.5%;
+} */
+/* body{
+  margin: 1rem;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo{
+  width: 200px;
+  margin-left: 20px;
+}
+.nav-items{
+  padding: 0px 20px;
+}
+.nav-items > ul {
+  font-size: 24px;
+  display: flex;
+  list-style-type: none;
+  cursor: pointer;
+}
+.nav-items > ul > li{
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.filter-btn{
+  margin: 10px;
+  cursor: pointer;
+}
+
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.res-card{
+  margin: 12px;
+  padding: 5px 5px 50px 5px;
+  width: 300px;
+  height: 400px;
+  
+}
+
+.res-card:hover{
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.res-logo{
+  width: 100%;
+  height: 70%;
+}
+
+.filter-btn{
+  margin: 10px;
+  cursor: pointer;
+}
+
+.swimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.swimmer-card{
+  margin: 20px;
+  width: 200px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+
+.loggin{
+  padding: 0px 5px;
+}
+
+.filter{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+} */
+
