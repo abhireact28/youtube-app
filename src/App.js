@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import { Provider } from "react-redux";
 import Body from "./components/Body";
 import Head from "./components/Head";
