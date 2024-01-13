@@ -40,7 +40,7 @@ const Head = () => {
     console.log(searchQuery);
       const data = await fetch(YOUTUBE_SEARCH_API+ searchQuery)
     const json = await data.json();
-    // console.log(json[1]);
+    console.log(json[1]);
     setSuggestions(json[1])
 
     // update cache
@@ -56,7 +56,7 @@ const Head = () => {
 
 
   return (
-    <div className='grid grid-flow-col m-2 p-4 shadow-lg fixed top-0 left-0 w-full z-[100]'>
+    <div className='grid grid-flow-col m-2 p-4 shadow-lg fixed top-0 left-0 w-full z-[100] mb-6'>
       <div className='flex col-span-1'>
         <img onClick={() => toggleMenuHandler()} className='h-6 cursor-pointer' src="https://miro.medium.com/max/600/0*M7czzJnPWF84U-j7.png" alt="menu" />
         <a href="/">

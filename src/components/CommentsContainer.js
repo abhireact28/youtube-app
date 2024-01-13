@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const commentsData = [
   {
@@ -112,37 +112,50 @@ const commentsData = [
   
 ]
 
-const CommentsList = ({comments}) => {
-  return comments.map((comment, index) => 
-  <div key={index}>
-    <Comment data={comment}/>
-    <div className='pl-5 border border-l-black ml-5'>
-    <CommentsList comments={comment.replies}/>
-    </div>
-  </div>
-)};
-
-const Comment = ({data}) => {
-  const {name, text, replies} = data;
+const Comment = ({ data }) => {
   return (
-    <div className='flex shadow-sm bg-gray-100 p-2 rounded-lg m-2'>
-      <img className='w-12 h-12' src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user" />
-      <div className='px-3'>
-        <p className='font-bold'>{name}</p>
-        <p>{text}</p>
+      <div className="flex mt-4 items-center">
+          <div>
+              <img className="rounded-full h-8 w-8 mr-4" src="https://yt3.ggpht.com/a/default-user=s88-c-k-c0x00ffffff-no-rj" alt="user" />
+          </div>
+          <div className="">
+              <p className="font-bold">{data.name}</p>
+              <p>{data.text}</p>
+          </div>
+
       </div>
-    </div>
   )
 }
 
+const CommentList = ({ comments }) => {
+  return comments.map((comment,index) => (
+      <div key={index}>
+          <Comment data={comment} key={index}/>
+          <div className="pl-5 border border-l-black ml-5" >
+              <CommentList comments={comment.replies} key={comment} />
+          </div>
 
-const CommentsContainer = () => {
+      </div>
+  ))
+
+}
+
+const CommentContainer = () => {
+// const toggle = useSelector((store)=>store.app.isMenuOpen)
+//     const dispatch = useDispatch()
+//     const toogle =()=>{
+//         dispatch(toogleMenu())
+//     }
+const [commentOpen , setCommentOPen] = useState(true)
   return (
-    <div className='m-5 p-2'>
-      <h1 className='text-2xl font-bold'>Comments:</h1>
-      <CommentsList comments={commentsData}/>
-    </div>
+      <>
+       <div   className="bg-white md:p-5 w-screen md:w-auto">
+             <div onClick={()=>{setCommentOPen(!commentOpen)}} className="mt-0 border border-b-2 cursor-pointer"> <h1 className="font-bold ">Comments</h1></div>
+              {/* <Comment data={CommentsData[0]}/> */}
+              { commentOpen &&    <CommentList comments={commentsData} />}
+          </div>
+      </>
   )
 }
 
-export default CommentsContainer;
+export default CommentContainer
